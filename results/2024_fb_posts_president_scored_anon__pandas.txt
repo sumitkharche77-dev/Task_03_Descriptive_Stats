@@ -1,0 +1,97 @@
+Analyzing dataset: data/2024_fb_posts_president_scored_anon.csv  (approach: pandas)
+========================================================================
+DATASET: 2024_fb_posts_president_scored_anon.csv   APPROACH: pandas
+========================================================================
+Rows: 19,009   Columns: 56   Elapsed: 0.531s
+Detected types: categorical=9, date=2, empty=4, flag=27, numeric=14
+Missing values (columns with any, top 10):
+  illuminating_scored_messageelection_integrity_Truth_illuminating: 19,009 (100.00%)
+  Sponsor Name: 19,009 (100.00%)
+  Sponsor Id: 19,009 (100.00%)
+  Sponsor Category: 19,009 (100.00%)
+  Video Share Status: 15,738 (82.79%)
+  Video Length: 15,738 (82.79%)
+  Page Admin Top Country: 2,729 (14.36%)
+  Page Category: 2,472 (13.00%)
+  Type: 2,465 (12.97%)
+  Total Views For All Crossposts: 2,465 (12.97%)
+
+--- Numeric columns ---
+Total Interactions: count=19,009 mean=4190.4396 min=0 max=6.969e+05 stdev=19003.0803 median=283
+Likes: count=19,009 mean=2377.6954 min=0 max=3.52e+05 stdev=11253.4697 median=139
+Comments: count=19,009 mean=901.5832 min=0 max=9.387e+04 stdev=3681.9801 median=48
+Shares: count=19,009 mean=320.5390 min=0 max=7.615e+04 stdev=1722.1599 median=21
+Love: count=19,009 mean=413.8773 min=0 max=2.445e+05 stdev=3730.9404 median=4
+Wow: count=19,009 mean=5.8683 min=0 max=4345 stdev=52.9470 median=1
+Haha: count=19,009 mean=105.7197 min=0 max=9.928e+04 stdev=942.0342 median=2
+Sad: count=19,009 mean=10.1722 min=0 max=5.611e+04 stdev=418.3250 median=0
+Angry: count=19,009 mean=20.0555 min=0 max=1.181e+04 stdev=156.0201 median=1
+Care: count=19,009 mean=34.9290 min=0 max=8.524e+04 stdev=790.1032 median=0
+Post Views: count=16,544 mean=6485.0585 min=0 max=4.276e+06 stdev=90392.9584 median=0
+Total Views: count=16,544 mean=7461.8470 min=0 max=4.462e+06 stdev=95976.2788 median=0
+Total Views For All Crossposts: count=16,544 mean=3555.9380 min=0 max=4.499e+06 stdev=88094.0483 median=0
+Overperforming Score: count=16,544 mean=-2.7442 min=-198.8 max=246.8 stdev=7.8085 median=-1.62
+
+--- Flag (0/1, True/False) columns: 27 detected; top 8 by rate ---
+advocacy_msg_type_illuminating: rate=0.5493 (10,441 of 19,009)
+issue_msg_type_illuminating: rate=0.4603 (8,750 of 19,009)
+attack_msg_type_illuminating: rate=0.2167 (4,119 of 19,009)
+image_msg_type_illuminating: rate=0.1486 (2,824 of 19,009)
+cta_msg_type_illuminating: rate=0.1328 (2,525 of 19,009)
+incivility_illuminating: rate=0.1279 (2,431 of 19,009)
+engagement_cta_subtype_illuminating: rate=0.0909 (1,727 of 19,009)
+economy_topic_illuminating: rate=0.0904 (1,718 of 19,009)
+
+--- Categorical / date columns ---
+Facebook_Id [categorical]: count=19,009 nunique=21 mode='32fc18da91029ff09bf74fe9887eace6b5d2145809d58...' (freq=9,013)
+post_id [categorical]: count=19,009 nunique=19,009 mode='0001e4a1dbadf84f0f43719972b60597cc79f1908bf60...' (freq=1)
+Page Category [categorical]: count=16,537 nunique=6 mode='PERSON' (freq=9,453)
+Page Admin Top Country [categorical]: count=16,280 nunique=1 mode='US' (freq=16,280)
+Post Created [date]: count=19,009 nunique=18,951 mode='2023-11-14 11:11:44 EST' (freq=2) range=2023-09-01 00:50:59 EDT .. 2024-11-06T20:00:35.000Z
+Post Created Date [date]: count=19,009 nunique=425 mode='2024-10-31' (freq=103) range=2023-09-01 .. 2024-11-06
+Post Created Time [categorical]: count=19,009 nunique=16,102 mode='17:30:01' (freq=7)
+Type [categorical]: count=16,544 nunique=9 mode='Link' (freq=7,404)
+Video Share Status [categorical]: count=3,271 nunique=3 mode='owned' (freq=3,100)
+Is Video Owner? [categorical]: count=16,544 nunique=3 mode='-' (freq=13,280)
+Video Length [categorical]: count=3,271 nunique=774 mode='00:00:30' (freq=83)
+
+--- List-valued columns ---
+
+--- Dict-valued columns ---
+
+--- Entirely empty columns: ['Sponsor Id', 'Sponsor Name', 'Sponsor Category', 'illuminating_scored_messageelection_integrity_Truth_illuminating']
+
+========================================================================
+GROUPED ANALYSIS
+========================================================================
+
+[primary] keys=['Facebook_Id']  groups=21  rows_with_null_key=0
+  top 5 groups by row count:
+    ['32fc18da91029ff09bf74fe9887eace6b5d...  n_rows=9,013
+    ['bfe51c6ac2cab17ba5c85883e76f6139803...  n_rows=1,431
+    ['ac24f31c4d4b3d5555065fa9558bdca4ab4...  n_rows=1,231
+    ['7f5731ac8e6959576e781064b5fa76e0592...  n_rows=1,158
+    ['a3fa0d15dd83b910295d0b17f9d341e737e...  n_rows=1,074
+  group size distribution: {'min': 22, 'median': 336.0, 'max': 9013}
+
+[primary_plus_id] keys=['Facebook_Id', 'post_id']  groups=19,009  rows_with_null_key=0
+  top 5 groups by row count:
+    ['058bd86861262fa71733f8515c34b729d9e...  n_rows=1
+    ['058bd86861262fa71733f8515c34b729d9e...  n_rows=1
+    ['058bd86861262fa71733f8515c34b729d9e...  n_rows=1
+    ['058bd86861262fa71733f8515c34b729d9e...  n_rows=1
+    ['058bd86861262fa71733f8515c34b729d9e...  n_rows=1
+  group size distribution: {'min': 1, 'median': 1.0, 'max': 1}
+  NOTE: every group has exactly one row (the id column is unique),
+        so this grouping is a no-op aggregation.
+
+[time] keys=['Post Created Date']  groups=425  rows_with_null_key=0
+  top 5 groups by row count:
+    ['2024-10-31']  n_rows=103
+    ['2024-01-10']  n_rows=102
+    ['2024-01-15']  n_rows=96
+    ['2024-01-06']  n_rows=95
+    ['2024-10-30']  n_rows=94
+  group size distribution: {'min': 1, 'median': 45.0, 'max': 103}
+
+Wrote results/2024_fb_posts_president_scored_anon__pandas.json (+ grouped CSVs) in results/

@@ -1,0 +1,85 @@
+Analyzing dataset: data/2024_tw_posts_president_scored_anon.csv  (approach: polars)
+========================================================================
+DATASET: 2024_tw_posts_president_scored_anon.csv   APPROACH: polars
+========================================================================
+Rows: 27,304   Columns: 47   Elapsed: 0.199s
+Detected types: categorical=5, date=2, flag=32, numeric=8
+Missing values (columns with any, top 10):
+  quoteId: 24,017 (87.96%)
+  inReplyToId: 23,959 (87.75%)
+  womens_issue_topic_illuminating: 1,270 (4.65%)
+  voting_cta_subtype_illuminating: 1,270 (4.65%)
+  technology_and_privacy_topic_illuminating: 1,270 (4.65%)
+  social_and_cultural_topic_illuminating: 1,270 (4.65%)
+  scam_illuminating: 1,270 (4.65%)
+  safety_topic_illuminating: 1,270 (4.65%)
+  race_and_ethnicity_topic_illuminating: 1,270 (4.65%)
+  military_topic_illuminating: 1,270 (4.65%)
+
+--- Numeric columns ---
+retweetCount: count=27,304 mean=1322.0552 min=0 max=1.446e+05 stdev=3405.0042 median=333
+replyCount: count=27,304 mean=1063.7850 min=0 max=1.213e+05 stdev=3174.9817 median=131
+likeCount: count=27,304 mean=6913.6928 min=0 max=9.152e+05 stdev=21590.3080 median=1406
+quoteCount: count=27,304 mean=128.0816 min=0 max=1.233e+05 stdev=1131.5335 median=17
+viewCount: count=27,304 mean=507084.7318 min=5 max=3.335e+08 stdev=3212173.9863 median=7.094e+04
+bookmarkCount: count=27,304 mean=136.2135 min=0 max=4.269e+04 stdev=712.5803 median=21
+quoteId: count=3,287 mean=1764298396658950400.0000 min=7.913e+17 max=1.854e+18 stdev=68946866493294792.0000 median=1.756e+18
+inReplyToId: count=3,345 mean=1758285724742000128.0000 min=1.24e+18 max=1.854e+18 stdev=43611965701560752.0000 median=1.747e+18
+
+--- Flag (0/1, True/False) columns: 32 detected; top 8 by rate ---
+advocacy_msg_type_illuminating: rate=0.5637 (14,675 of 26,034)
+issue_msg_type_illuminating: rate=0.5077 (13,217 of 26,034)
+attack_msg_type_illuminating: rate=0.3076 (8,008 of 26,034)
+image_msg_type_illuminating: rate=0.2264 (5,895 of 26,034)
+incivility_illuminating: rate=0.1786 (4,649 of 26,034)
+economy_topic_illuminating: rate=0.1602 (4,171 of 26,034)
+isReply: rate=0.1236 (3,374 of 27,304)
+isQuote: rate=0.1187 (3,240 of 27,304)
+
+--- Categorical / date columns ---
+id [categorical]: count=27,304 nunique=27,304 mode='0000635d0c9e7bdf89dfc13811d080dbffac548945943...' (freq=1)
+url [categorical]: count=27,304 nunique=27,304 mode='0000179c6b90798f167528aaaaf67886a975ea68af78f...' (freq=1)
+source [categorical]: count=27,304 nunique=14 mode='Twitter Web App' (freq=14,930)
+createdAt [date]: count=27,304 nunique=27,014 mode='2023-10-06 04:55:21' (freq=4) range=2023-09-01 00:30:21 .. 2024-11-04 23:40:21
+lang [categorical]: count=27,304 nunique=12 mode='en' (freq=27,281)
+month_year [date]: count=27,304 nunique=15 mode='2024-10' (freq=3,586) range=2023-09 .. 2024-11
+illuminating_scored_message [categorical]: count=27,304 nunique=27,136 mode='36cb7d55fcf85362ca03f624c2f574f1f55f89db559b1...' (freq=21)
+
+--- List-valued columns ---
+
+--- Dict-valued columns ---
+
+========================================================================
+GROUPED ANALYSIS
+========================================================================
+
+[primary] keys=['source']  groups=14  rows_with_null_key=0
+  top 5 groups by row count:
+    ['Twitter Web App']  n_rows=14,930
+    ['Twitter for iPhone']  n_rows=8,494
+    ['Sprout Social']  n_rows=2,933
+    ['Twitter Media Studio']  n_rows=499
+    ['Twitter for iPad']  n_rows=266
+  group size distribution: {'min': 1, 'median': 28.5, 'max': 14930}
+
+[primary_plus_id] keys=['source', 'id']  groups=27,304  rows_with_null_key=0
+  top 5 groups by row count:
+    ['Canva', '5b11b20d90740faeeb08c8ad57...  n_rows=1
+    ['Hootsuite Inc.', '07c50726e45ecca76...  n_rows=1
+    ['Hootsuite Inc.', '0abf23b6071b786a8...  n_rows=1
+    ['Hootsuite Inc.', '0ce7f08a4fdeb2bcc...  n_rows=1
+    ['Hootsuite Inc.', '10423e69321c4401d...  n_rows=1
+  group size distribution: {'min': 1, 'median': 1.0, 'max': 1}
+  NOTE: every group has exactly one row (the id column is unique),
+        so this grouping is a no-op aggregation.
+
+[time] keys=['month_year']  groups=15  rows_with_null_key=0
+  top 5 groups by row count:
+    ['2024-10']  n_rows=3,586
+    ['2024-09']  n_rows=2,856
+    ['2024-08']  n_rows=2,647
+    ['2023-09']  n_rows=2,336
+    ['2023-11']  n_rows=2,334
+  group size distribution: {'min': 475, 'median': 1811.0, 'max': 3586}
+
+Wrote results/2024_tw_posts_president_scored_anon__polars.json (+ grouped CSVs) in results/

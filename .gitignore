@@ -1,0 +1,8 @@
+# Datasets are never committed (see README for download links)
+*.csv
+!results/**/*.csv
+dev_samples/
+__pycache__/
+*.pyc
+.DS_Store
+run_all.log

@@ -1,0 +1,736 @@
+{
+ "approach": "polars",
+ "dataset": "2024_tw_posts_president_scored_anon",
+ "file": "2024_tw_posts_president_scored_anon.csv",
+ "n_rows": 27304,
+ "n_cols": 47,
+ "elapsed_seconds": 0.199,
+ "group_keys": {
+  "primary": [
+   "source"
+  ],
+  "primary_plus_id": [
+   "source",
+   "id"
+  ],
+  "time": [
+   "month_year"
+  ]
+ },
+ "columns": {
+  "id": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "categorical",
+   "nunique": 27304,
+   "mode": "0000635d0c9e7bdf89dfc13811d080dbffac54894594354aa0876b3c12d59aeb",
+   "mode_freq": 1,
+   "top5": [
+    [
+     "0000635d0c9e7bdf89dfc13811d080dbffac54894594354aa0876b3c12d59aeb",
+     1
+    ],
+    [
+     "00008766c5fc0cb57b4d76792f8f1cea9ead8cf29217dd5bc2e3bafb9ba9fab9",
+     1
+    ],
+    [
+     "00024b0fcb3cb0476d8eae457f7471bd8322c33416cc182b1bbd73e001fe977b",
+     1
+    ],
+    [
+     "00042707dea2d809b45b5b60b9474f146849cb85936c5ea5f8adeb5842256ef9",
+     1
+    ],
+    [
+     "0004752ef0c4ca595974b62e2a2e4ff34901abe0b5f0794c836cdbd9ff5743ce",
+     1
+    ]
+   ]
+  },
+  "url": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "categorical",
+   "nunique": 27304,
+   "mode": "0000179c6b90798f167528aaaaf67886a975ea68af78f4f342822fae858fdcf1",
+   "mode_freq": 1,
+   "top5": [
+    [
+     "0000179c6b90798f167528aaaaf67886a975ea68af78f4f342822fae858fdcf1",
+     1
+    ],
+    [
+     "0003e974bd24d889ef9e0d59175178d257fb0b020eaac0c0462fba98e898c795",
+     1
+    ],
+    [
+     "000839e858492a2a03b5d2c817293d1745cd549d6beb2fa072ef64460513e1d3",
+     1
+    ],
+    [
+     "00084852460409ffc7f3f63233cab4d56aa70e265eb094fd5262b3c2f0f1007a",
+     1
+    ],
+    [
+     "0008bfeb2d0474ae200bd58d5c182fae8cc4217cbc0a90ddcfdc144afe6332cc",
+     1
+    ]
+   ]
+  },
+  "source": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "categorical",
+   "nunique": 14,
+   "mode": "Twitter Web App",
+   "mode_freq": 14930,
+   "top5": [
+    [
+     "Twitter Web App",
+     14930
+    ],
+    [
+     "Twitter for iPhone",
+     8494
+    ],
+    [
+     "Sprout Social",
+     2933
+    ],
+    [
+     "Twitter Media Studio",
+     499
+    ],
+    [
+     "Twitter for iPad",
+     266
+    ]
+   ]
+  },
+  "retweetCount": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 1322.0551933782597,
+   "min": 0.0,
+   "max": 144615.0,
+   "stdev": 3405.0042401645183,
+   "median": 333.0
+  },
+  "replyCount": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 1063.7850131848813,
+   "min": 0.0,
+   "max": 121270.0,
+   "stdev": 3174.9816541393484,
+   "median": 131.0
+  },
+  "likeCount": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 6913.69282888954,
+   "min": 0.0,
+   "max": 915221.0,
+   "stdev": 21590.307989209443,
+   "median": 1406.0
+  },
+  "quoteCount": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 128.08156314093173,
+   "min": 0.0,
+   "max": 123320.0,
+   "stdev": 1131.5334680019284,
+   "median": 17.0
+  },
+  "viewCount": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 507084.7318341635,
+   "min": 5.0,
+   "max": 333502775.0,
+   "stdev": 3212173.986296655,
+   "median": 70942.0
+  },
+  "createdAt": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "date",
+   "nunique": 27014,
+   "mode": "2023-10-06 04:55:21",
+   "mode_freq": 4,
+   "top5": [
+    [
+     "2023-10-06 04:55:21",
+     4
+    ],
+    [
+     "2024-05-28 17:19:24",
+     4
+    ],
+    [
+     "2024-08-30 03:04:08",
+     4
+    ],
+    [
+     "2023-09-08 16:19:04",
+     3
+    ],
+    [
+     "2023-09-08 16:19:09",
+     3
+    ]
+   ],
+   "min": "2023-09-01 00:30:21",
+   "max": "2024-11-04 23:40:21"
+  },
+  "lang": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "categorical",
+   "nunique": 12,
+   "mode": "en",
+   "mode_freq": 27281,
+   "top5": [
+    [
+     "en",
+     27281
+    ],
+    [
+     "fr",
+     6
+    ],
+    [
+     "tl",
+     4
+    ],
+    [
+     "da",
+     3
+    ],
+    [
+     "es",
+     3
+    ]
+   ]
+  },
+  "bookmarkCount": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 136.21352182830356,
+   "min": 0.0,
+   "max": 42693.0,
+   "stdev": 712.5802944831519,
+   "median": 21.0
+  },
+  "isReply": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "flag",
+   "ones": 3374,
+   "rate": 0.1235716378552593
+  },
+  "isRetweet": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "flag",
+   "ones": 0,
+   "rate": 0.0
+  },
+  "isQuote": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "flag",
+   "ones": 3240,
+   "rate": 0.11866393202461178
+  },
+  "isConversationControlled": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "flag",
+   "ones": 8,
+   "rate": 0.0002929973630237328
+  },
+  "quoteId": {
+   "missing": 24017,
+   "missing_pct": 87.96147084676238,
+   "count": 3287,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 1.7642983966589504e+18,
+   "min": 7.912639390153769e+17,
+   "max": 1.8535761683325583e+18,
+   "stdev": 6.894686649329479e+16,
+   "median": 1.756495928737825e+18
+  },
+  "inReplyToId": {
+   "missing": 23959,
+   "missing_pct": 87.74904775857017,
+   "count": 3345,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 1.758285724742e+18,
+   "min": 1.2400673584227e+18,
+   "max": 1.853530653414859e+18,
+   "stdev": 4.361196570156075e+16,
+   "median": 1.74664126277265e+18
+  },
+  "month_year": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "date",
+   "nunique": 15,
+   "mode": "2024-10",
+   "mode_freq": 3586,
+   "top5": [
+    [
+     "2024-10",
+     3586
+    ],
+    [
+     "2024-09",
+     2856
+    ],
+    [
+     "2024-08",
+     2647
+    ],
+    [
+     "2023-09",
+     2336
+    ],
+    [
+     "2023-11",
+     2334
+    ]
+   ],
+   "min": "2023-09",
+   "max": "2024-11"
+  },
+  "illuminating_scored_message": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "categorical",
+   "nunique": 27136,
+   "mode": "36cb7d55fcf85362ca03f624c2f574f1f55f89db559b17da084df6e643afe5cd",
+   "mode_freq": 21,
+   "top5": [
+    [
+     "36cb7d55fcf85362ca03f624c2f574f1f55f89db559b17da084df6e643afe5cd",
+     21
+    ],
+    [
+     "1d2cc25fad0d66a295d4fafdd590d71d0e027a1d2a58cf5db0c58ba09b930e04",
+     18
+    ],
+    [
+     "e85b31153cfcc753f8657eb033c8e8fb03f6da4c384da1d4e563eef696f6e7a0",
+     10
+    ],
+    [
+     "c3adbeed65888d91e375c51dc9cc936d137e35fc360ebed1763b5826903046f9",
+     7
+    ],
+    [
+     "371425c7624b8c082fb580cb568bda3a42b7d4284d75c929db70ab7f76f08dbf",
+     4
+    ]
+   ]
+  },
+  "election_integrity_Truth_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 967,
+   "rate": 0.03714373511561804
+  },
+  "advocacy_msg_type_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 14675,
+   "rate": 0.5636859491434278
+  },
+  "issue_msg_type_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 13217,
+   "rate": 0.507682261657832
+  },
+  "attack_msg_type_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 8008,
+   "rate": 0.3075977567795959
+  },
+  "image_msg_type_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 5895,
+   "rate": 0.22643466236460014
+  },
+  "cta_msg_type_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 2855,
+   "rate": 0.10966428516555274
+  },
+  "engagement_cta_subtype_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 1742,
+   "rate": 0.0669124990397173
+  },
+  "fundraising_cta_subtype_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 205,
+   "rate": 0.007874318199277867
+  },
+  "voting_cta_subtype_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 437,
+   "rate": 0.016785741722363065
+  },
+  "covid_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 198,
+   "rate": 0.0076054390412537455
+  },
+  "economy_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 4171,
+   "rate": 0.16021356687408772
+  },
+  "education_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 480,
+   "rate": 0.01843742797879696
+  },
+  "environment_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 743,
+   "rate": 0.028539602058846123
+  },
+  "foreign_policy_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 1100,
+   "rate": 0.042252439118076364
+  },
+  "governance_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 598,
+   "rate": 0.022969962356917877
+  },
+  "health_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 1449,
+   "rate": 0.05565798571099332
+  },
+  "immigration_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 1700,
+   "rate": 0.06529922409157256
+  },
+  "lgbtq_issues_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 80,
+   "rate": 0.0030729046631328264
+  },
+  "military_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 286,
+   "rate": 0.010985634170699855
+  },
+  "race_and_ethnicity_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 401,
+   "rate": 0.015402934623953292
+  },
+  "safety_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 979,
+   "rate": 0.03760467081508796
+  },
+  "social_and_cultural_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 1353,
+   "rate": 0.05197050011523392
+  },
+  "technology_and_privacy_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 53,
+   "rate": 0.0020357993393254974
+  },
+  "womens_issue_topic_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 607,
+   "rate": 0.02331566413152032
+  },
+  "incivility_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 4649,
+   "rate": 0.17857417223630637
+  },
+  "scam_illuminating": {
+   "missing": 1270,
+   "missing_pct": 4.651333138001758,
+   "count": 26034,
+   "type": "flag",
+   "ones": 322,
+   "rate": 0.012368441269109626
+  },
+  "freefair_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "flag",
+   "ones": 39,
+   "rate": 0.0014283621447406974
+  },
+  "fraud_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 27304,
+   "type": "flag",
+   "ones": 75,
+   "rate": 0.0027468502783474947
+  }
+ },
+ "groups": {
+  "primary": {
+   "n_groups": 14,
+   "rows_with_null_key": 0,
+   "size_distribution": {
+    "min": 1,
+    "median": 28.5,
+    "max": 14930
+   },
+   "keys": [
+    "source"
+   ],
+   "top5_by_n_rows": [
+    [
+     [
+      "Twitter Web App"
+     ],
+     14930
+    ],
+    [
+     [
+      "Twitter for iPhone"
+     ],
+     8494
+    ],
+    [
+     [
+      "Sprout Social"
+     ],
+     2933
+    ],
+    [
+     [
+      "Twitter Media Studio"
+     ],
+     499
+    ],
+    [
+     [
+      "Twitter for iPad"
+     ],
+     266
+    ]
+   ]
+  },
+  "primary_plus_id": {
+   "n_groups": 27304,
+   "rows_with_null_key": 0,
+   "size_distribution": {
+    "min": 1,
+    "median": 1.0,
+    "max": 1
+   },
+   "top5_by_n_rows": [
+    [
+     [
+      "Canva",
+      "5b11b20d90740faeeb08c8ad5724fa3ab78a4364d13016665b0c5a4581beec7b"
+     ],
+     1
+    ],
+    [
+     [
+      "Hootsuite Inc.",
+      "07c50726e45ecca764dfcfc7ef041227e20308a21cb22327bef29f237d2f576a"
+     ],
+     1
+    ],
+    [
+     [
+      "Hootsuite Inc.",
+      "0abf23b6071b786a87d82289e0225eae28c2bcc90beb4a74c338275e578a9650"
+     ],
+     1
+    ],
+    [
+     [
+      "Hootsuite Inc.",
+      "0ce7f08a4fdeb2bcc6bf6b43571781f33250dbc633f5edc5937c3b397a3c2770"
+     ],
+     1
+    ],
+    [
+     [
+      "Hootsuite Inc.",
+      "10423e69321c4401d801389d1f1c976b53ae8600c21d9f2c0a6a5882c3e6fa0e"
+     ],
+     1
+    ]
+   ],
+   "note": "per-column aggregates skipped (one row per group)",
+   "keys": [
+    "source",
+    "id"
+   ]
+  },
+  "time": {
+   "n_groups": 15,
+   "rows_with_null_key": 0,
+   "size_distribution": {
+    "min": 475,
+    "median": 1811.0,
+    "max": 3586
+   },
+   "keys": [
+    "month_year"
+   ],
+   "top5_by_n_rows": [
+    [
+     [
+      "2024-10"
+     ],
+     3586
+    ],
+    [
+     [
+      "2024-09"
+     ],
+     2856
+    ],
+    [
+     [
+      "2024-08"
+     ],
+     2647
+    ],
+    [
+     [
+      "2023-09"
+     ],
+     2336
+    ],
+    [
+     [
+      "2023-11"
+     ],
+     2334
+    ]
+   ]
+  }
+ }
+}

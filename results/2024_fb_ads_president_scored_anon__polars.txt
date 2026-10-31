@@ -1,0 +1,74 @@
+Analyzing dataset: data/2024_fb_ads_president_scored_anon.csv  (approach: polars)
+========================================================================
+DATASET: 2024_fb_ads_president_scored_anon.csv   APPROACH: polars
+========================================================================
+Rows: 246,745   Columns: 41   Elapsed: 40.934s
+Detected types: categorical=5, date=1, dict=2, flag=28, list=2, numeric=3
+Missing values (columns with any, top 10):
+  bylines: 1,009 (0.41%)
+
+--- Numeric columns ---
+estimated_audience_size: count=246,745 mean=556462.8560 min=0 max=1e+06 stdev=409864.7588 median=3e+05
+estimated_impressions: count=246,745 mean=45601.5260 min=499 max=1e+06 stdev=136790.7699 median=3499
+estimated_spend: count=246,745 mean=1061.2914 min=49 max=4.75e+05 stdev=4992.5607 median=49
+
+--- Flag (0/1, True/False) columns: 28 detected; top 8 by rate ---
+cta_msg_type_illuminating: rate=0.5728 (141,328 of 246,745)
+advocacy_msg_type_illuminating: rate=0.5486 (135,372 of 246,745)
+issue_msg_type_illuminating: rate=0.3816 (94,170 of 246,745)
+attack_msg_type_illuminating: rate=0.2719 (67,079 of 246,745)
+fundraising_cta_subtype_illuminating: rate=0.2285 (56,378 of 246,745)
+image_msg_type_illuminating: rate=0.2227 (54,951 of 246,745)
+incivility_illuminating: rate=0.1875 (46,271 of 246,745)
+voting_cta_subtype_illuminating: rate=0.1438 (35,493 of 246,745)
+
+--- Categorical / date columns ---
+page_id [categorical]: count=246,745 nunique=4,475 mode='4d66f5853f0365dba032a87704a634f023d15babde973...' (freq=55,503)
+ad_id [categorical]: count=246,745 nunique=246,745 mode='0000a88a64484883df6ca1fabd357e4c5950e443123ce...' (freq=1)
+ad_creation_time [date]: count=246,745 nunique=547 mode='2024-10-27' (freq=8,619) range=2021-07-06 .. 2024-11-05
+bylines [categorical]: count=245,736 nunique=3,790 mode='HARRIS FOR PRESIDENT' (freq=49,788)
+currency [categorical]: count=246,745 nunique=18 mode='USD' (freq=246,599)
+illuminating_scored_message [categorical]: count=246,745 nunique=26,338 mode='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b9...' (freq=5,972)
+
+--- List-valued columns ---
+publisher_platforms: parsed=246,745 unparsed=0 avg_len=1.88 nunique_elements=4 top5=[('facebook', 238350), ('instagram', 223434), ('audience_network', 566), ('messenger', 566)]
+illuminating_mentions: parsed=246,745 unparsed=0 avg_len=0.89 nunique_elements=25 top5=[('Donald Trump', 78324), ('Kamala Harris', 53239), ('Joe Biden', 24247), ('President Trump', 22153), ('President Biden', 16517)]
+
+--- Dict-valued columns ---
+delivery_by_region: parsed=246,745 unparsed=0 avg_keys=21.97
+demographic_distribution: parsed=246,745 unparsed=0 avg_keys=13.01
+
+========================================================================
+GROUPED ANALYSIS
+========================================================================
+
+[primary] keys=['page_id']  groups=4,475  rows_with_null_key=0
+  top 5 groups by row count:
+    ['4d66f5853f0365dba032a87704a634f023d...  n_rows=55,503
+    ['e3342051b60393770363ffc02946a0f76bc...  n_rows=23,988
+    ['4ade404186269ec62d2dd7d9e0ed5f93a5f...  n_rows=14,822
+    ['330b2f35ded2161e63fbb2b5c5bdae05bff...  n_rows=10,461
+    ['ec8ac6dc1cddc49972de2c31b62343fe397...  n_rows=9,851
+  group size distribution: {'min': 1, 'median': 3.0, 'max': 55503}
+
+[primary_plus_id] keys=['page_id', 'ad_id']  groups=246,745  rows_with_null_key=0
+  top 5 groups by row count:
+    ['0005687f4ac876c135dda2bd5aa60962ece...  n_rows=1
+    ['0005687f4ac876c135dda2bd5aa60962ece...  n_rows=1
+    ['00157b7e28846e0510e1d265c5ea72fea28...  n_rows=1
+    ['00157b7e28846e0510e1d265c5ea72fea28...  n_rows=1
+    ['00157b7e28846e0510e1d265c5ea72fea28...  n_rows=1
+  group size distribution: {'min': 1, 'median': 1.0, 'max': 1}
+  NOTE: every group has exactly one row (the id column is unique),
+        so this grouping is a no-op aggregation.
+
+[time] keys=['ad_creation_time']  groups=547  rows_with_null_key=0
+  top 5 groups by row count:
+    ['2024-10-27']  n_rows=8,619
+    ['2024-10-28']  n_rows=7,356
+    ['2024-10-26']  n_rows=6,414
+    ['2024-10-23']  n_rows=5,021
+    ['2024-10-25']  n_rows=4,769
+  group size distribution: {'min': 1, 'median': 205.0, 'max': 8619}
+
+Wrote results/2024_fb_ads_president_scored_anon__polars.json (+ grouped CSVs) in results/

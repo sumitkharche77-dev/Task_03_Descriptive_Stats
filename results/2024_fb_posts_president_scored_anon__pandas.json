@@ -1,0 +1,884 @@
+{
+ "approach": "pandas",
+ "dataset": "2024_fb_posts_president_scored_anon",
+ "file": "2024_fb_posts_president_scored_anon.csv",
+ "n_rows": 19009,
+ "n_cols": 56,
+ "elapsed_seconds": 0.531,
+ "group_keys": {
+  "primary": [
+   "Facebook_Id"
+  ],
+  "primary_plus_id": [
+   "Facebook_Id",
+   "post_id"
+  ],
+  "time": [
+   "Post Created Date"
+  ]
+ },
+ "columns": {
+  "Facebook_Id": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "categorical",
+   "nunique": 21,
+   "mode": "32fc18da91029ff09bf74fe9887eace6b5d2145809d583f696e344530508b064",
+   "mode_freq": 9013,
+   "top5": [
+    [
+     "32fc18da91029ff09bf74fe9887eace6b5d2145809d583f696e344530508b064",
+     9013
+    ],
+    [
+     "bfe51c6ac2cab17ba5c85883e76f61398031ed57e4cf62d19fd483548ebb904b",
+     1431
+    ],
+    [
+     "ac24f31c4d4b3d5555065fa9558bdca4ab4b5e1379922875ae9e6e32f1d46d25",
+     1231
+    ],
+    [
+     "7f5731ac8e6959576e781064b5fa76e059200cdfc3f4e0d7b68bc98792d2cf5b",
+     1158
+    ],
+    [
+     "a3fa0d15dd83b910295d0b17f9d341e737eddcb8d9b8081758140584c710406e",
+     1074
+    ]
+   ]
+  },
+  "post_id": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "categorical",
+   "nunique": 19009,
+   "mode": "0001e4a1dbadf84f0f43719972b60597cc79f1908bf60125779280f2a0054781",
+   "mode_freq": 1,
+   "top5": [
+    [
+     "0001e4a1dbadf84f0f43719972b60597cc79f1908bf60125779280f2a0054781",
+     1
+    ],
+    [
+     "000634520f1f020a7d878a472c495e2a424ac06bf31b15d6825aac4048cef1cf",
+     1
+    ],
+    [
+     "000965ed8ad23d5a11bfb08ff1b4a48aa5f5faf48bec788c598dbe609da097b8",
+     1
+    ],
+    [
+     "000a7e1cb02147e106c41f341e42823ca25d585c36d9f8675a99973e3ac93017",
+     1
+    ],
+    [
+     "0010ea66f8b686476bcbaa744d28a70799c3ead93deea262f0a2c0d5bbecf6fd",
+     1
+    ]
+   ]
+  },
+  "Page Category": {
+   "missing": 2472,
+   "missing_pct": 13.004366352780261,
+   "count": 16537,
+   "type": "categorical",
+   "nunique": 6,
+   "mode": "PERSON",
+   "mode_freq": 9453,
+   "top5": [
+    [
+     "PERSON",
+     9453
+    ],
+    [
+     "ACTOR",
+     3304
+    ],
+    [
+     "POLITICIAN",
+     2595
+    ],
+    [
+     "POLITICAL_CANDIDATE",
+     1161
+    ],
+    [
+     "ENTREPRENEUR",
+     23
+    ]
+   ]
+  },
+  "Page Admin Top Country": {
+   "missing": 2729,
+   "missing_pct": 14.356357514861381,
+   "count": 16280,
+   "type": "categorical",
+   "nunique": 1,
+   "mode": "US",
+   "mode_freq": 16280,
+   "top5": [
+    [
+     "US",
+     16280
+    ]
+   ]
+  },
+  "Post Created": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "date",
+   "nunique": 18951,
+   "mode": "2023-11-14 11:11:44 EST",
+   "mode_freq": 2,
+   "top5": [
+    [
+     "2023-11-14 11:11:44 EST",
+     2
+    ],
+    [
+     "2023-11-22 19:20:24 EST",
+     2
+    ],
+    [
+     "2023-12-22 11:22:14 EST",
+     2
+    ],
+    [
+     "2024-01-06 18:47:00 EST",
+     2
+    ],
+    [
+     "2024-01-30 12:28:10 EST",
+     2
+    ]
+   ],
+   "min": "2023-09-01 00:50:59 EDT",
+   "max": "2024-11-06T20:00:35.000Z"
+  },
+  "Post Created Date": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "date",
+   "nunique": 425,
+   "mode": "2024-10-31",
+   "mode_freq": 103,
+   "top5": [
+    [
+     "2024-10-31",
+     103
+    ],
+    [
+     "2024-01-10",
+     102
+    ],
+    [
+     "2024-01-15",
+     96
+    ],
+    [
+     "2024-01-06",
+     95
+    ],
+    [
+     "2024-10-30",
+     94
+    ]
+   ],
+   "min": "2023-09-01",
+   "max": "2024-11-06"
+  },
+  "Post Created Time": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "categorical",
+   "nunique": 16102,
+   "mode": "17:30:01",
+   "mode_freq": 7,
+   "top5": [
+    [
+     "17:30:01",
+     7
+    ],
+    [
+     "19:42:00",
+     7
+    ],
+    [
+     "12:00:16",
+     6
+    ],
+    [
+     "15:40:00",
+     6
+    ],
+    [
+     "19:30:01",
+     6
+    ]
+   ]
+  },
+  "Type": {
+   "missing": 2465,
+   "missing_pct": 12.967541690778054,
+   "count": 16544,
+   "type": "categorical",
+   "nunique": 9,
+   "mode": "Link",
+   "mode_freq": 7404,
+   "top5": [
+    [
+     "Link",
+     7404
+    ],
+    [
+     "Photo",
+     3820
+    ],
+    [
+     "Native Video",
+     2931
+    ],
+    [
+     "Status",
+     1387
+    ],
+    [
+     "YouTube",
+     353
+    ]
+   ]
+  },
+  "Total Interactions": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 4190.439633857646,
+   "min": 0.0,
+   "max": 696853.0,
+   "stdev": 19003.08033150678,
+   "median": 283.0
+  },
+  "Likes": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 2377.6954074385817,
+   "min": 0.0,
+   "max": 351979.0,
+   "stdev": 11253.469668562248,
+   "median": 139.0
+  },
+  "Comments": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 901.583197432795,
+   "min": 0.0,
+   "max": 93872.0,
+   "stdev": 3681.9800962414115,
+   "median": 48.0
+  },
+  "Shares": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 320.53895523173236,
+   "min": 0.0,
+   "max": 76150.0,
+   "stdev": 1722.1598787908092,
+   "median": 21.0
+  },
+  "Love": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 413.87732126887266,
+   "min": 0.0,
+   "max": 244482.0,
+   "stdev": 3730.940449783579,
+   "median": 4.0
+  },
+  "Wow": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 5.8683255300120996,
+   "min": 0.0,
+   "max": 4345.0,
+   "stdev": 52.946978621835086,
+   "median": 1.0
+  },
+  "Haha": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 105.71971171550318,
+   "min": 0.0,
+   "max": 99276.0,
+   "stdev": 942.034248188069,
+   "median": 2.0
+  },
+  "Sad": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 10.172181598190331,
+   "min": 0.0,
+   "max": 56111.0,
+   "stdev": 418.3250070508284,
+   "median": 0.0
+  },
+  "Angry": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 20.05550002630333,
+   "min": 0.0,
+   "max": 11814.0,
+   "stdev": 156.02008883853503,
+   "median": 1.0
+  },
+  "Care": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 34.92903361565574,
+   "min": 0.0,
+   "max": 85236.0,
+   "stdev": 790.1032133297067,
+   "median": 0.0
+  },
+  "Video Share Status": {
+   "missing": 15738,
+   "missing_pct": 82.79236151296755,
+   "count": 3271,
+   "type": "categorical",
+   "nunique": 3,
+   "mode": "owned",
+   "mode_freq": 3100,
+   "top5": [
+    [
+     "owned",
+     3100
+    ],
+    [
+     "share",
+     99
+    ],
+    [
+     "crosspost",
+     72
+    ]
+   ]
+  },
+  "Is Video Owner?": {
+   "missing": 2465,
+   "missing_pct": 12.967541690778054,
+   "count": 16544,
+   "type": "categorical",
+   "nunique": 3,
+   "mode": "-",
+   "mode_freq": 13280,
+   "top5": [
+    [
+     "-",
+     13280
+    ],
+    [
+     "Yes",
+     3181
+    ],
+    [
+     "No",
+     83
+    ]
+   ]
+  },
+  "Post Views": {
+   "missing": 2465,
+   "missing_pct": 12.967541690778054,
+   "count": 16544,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 6485.058510638298,
+   "min": 0.0,
+   "max": 4276477.0,
+   "stdev": 90392.95844483376,
+   "median": 0.0
+  },
+  "Total Views": {
+   "missing": 2465,
+   "missing_pct": 12.967541690778054,
+   "count": 16544,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 7461.847014023211,
+   "min": 0.0,
+   "max": 4462155.0,
+   "stdev": 95976.27884773153,
+   "median": 0.0
+  },
+  "Total Views For All Crossposts": {
+   "missing": 2465,
+   "missing_pct": 12.967541690778054,
+   "count": 16544,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": 3555.9379835589943,
+   "min": 0.0,
+   "max": 4499458.0,
+   "stdev": 88094.04831888725,
+   "median": 0.0
+  },
+  "Video Length": {
+   "missing": 15738,
+   "missing_pct": 82.79236151296755,
+   "count": 3271,
+   "type": "categorical",
+   "nunique": 774,
+   "mode": "00:00:30",
+   "mode_freq": 83,
+   "top5": [
+    [
+     "00:00:30",
+     83
+    ],
+    [
+     "00:01:00",
+     50
+    ],
+    [
+     "00:00:59",
+     37
+    ],
+    [
+     "00:00:37",
+     33
+    ],
+    [
+     "00:00:45",
+     32
+    ]
+   ]
+  },
+  "Sponsor Id": {
+   "missing": 19009,
+   "missing_pct": 100.0,
+   "count": 0,
+   "type": "empty"
+  },
+  "Sponsor Name": {
+   "missing": 19009,
+   "missing_pct": 100.0,
+   "count": 0,
+   "type": "empty"
+  },
+  "Sponsor Category": {
+   "missing": 19009,
+   "missing_pct": 100.0,
+   "count": 0,
+   "type": "empty"
+  },
+  "Overperforming Score": {
+   "missing": 2465,
+   "missing_pct": 12.967541690778054,
+   "count": 16544,
+   "type": "numeric",
+   "unparseable": 0,
+   "mean": -2.744160420696325,
+   "min": -198.75,
+   "max": 246.78,
+   "stdev": 7.808476956626709,
+   "median": -1.62
+  },
+  "illuminating_scored_messageelection_integrity_Truth_illuminating": {
+   "missing": 19009,
+   "missing_pct": 100.0,
+   "count": 0,
+   "type": "empty"
+  },
+  "advocacy_msg_type_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 10441,
+   "rate": 0.549266137092956
+  },
+  "issue_msg_type_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 8750,
+   "rate": 0.4603082750276185
+  },
+  "attack_msg_type_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 4119,
+   "rate": 0.2166868325530012
+  },
+  "image_msg_type_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 2824,
+   "rate": 0.14856120784891366
+  },
+  "cta_msg_type_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 2525,
+   "rate": 0.1328318165079699
+  },
+  "engagement_cta_subtype_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 1727,
+   "rate": 0.0908517018254511
+  },
+  "fundraising_cta_subtype_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 350,
+   "rate": 0.01841233100110474
+  },
+  "voting_cta_subtype_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 445,
+   "rate": 0.023409963701404597
+  },
+  "covid_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 996,
+   "rate": 0.05239623336314377
+  },
+  "economy_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 1718,
+   "rate": 0.09037824188542269
+  },
+  "education_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 285,
+   "rate": 0.014992898100899574
+  },
+  "environment_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 423,
+   "rate": 0.022252617181335158
+  },
+  "foreign_policy_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 701,
+   "rate": 0.03687726866221264
+  },
+  "governance_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 591,
+   "rate": 0.03109053606186543
+  },
+  "health_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 925,
+   "rate": 0.04866116050291967
+  },
+  "immigration_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 776,
+   "rate": 0.04082276816244937
+  },
+  "lgbtq_issues_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 64,
+   "rate": 0.0033668262402020096
+  },
+  "military_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 106,
+   "rate": 0.0055763059603345785
+  },
+  "race_and_ethnicity_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 410,
+   "rate": 0.021568730601294123
+  },
+  "safety_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 612,
+   "rate": 0.032195275921931714
+  },
+  "social_and_cultural_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 1173,
+   "rate": 0.06170761218370246
+  },
+  "technology_and_privacy_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 39,
+   "rate": 0.0020516597401230995
+  },
+  "womens_issue_topic_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 484,
+   "rate": 0.0254616234415277
+  },
+  "incivility_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 2431,
+   "rate": 0.1278867904676732
+  },
+  "scam_illuminating": {
+   "missing": 949,
+   "missing_pct": 4.992372034299542,
+   "count": 18060,
+   "type": "flag",
+   "ones": 365,
+   "rate": 0.020210409745293468
+  },
+  "freefair_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 54,
+   "rate": 0.0028407596401704457
+  },
+  "fraud_illuminating": {
+   "missing": 0,
+   "missing_pct": 0.0,
+   "count": 19009,
+   "type": "flag",
+   "ones": 164,
+   "rate": 0.00862749224051765
+  }
+ },
+ "groups": {
+  "primary": {
+   "n_groups": 21,
+   "rows_with_null_key": 0,
+   "size_distribution": {
+    "min": 22,
+    "median": 336.0,
+    "max": 9013
+   },
+   "keys": [
+    "Facebook_Id"
+   ],
+   "top5_by_n_rows": [
+    [
+     [
+      "32fc18da91029ff09bf74fe9887eace6b5d2145809d583f696e344530508b064"
+     ],
+     9013
+    ],
+    [
+     [
+      "bfe51c6ac2cab17ba5c85883e76f61398031ed57e4cf62d19fd483548ebb904b"
+     ],
+     1431
+    ],
+    [
+     [
+      "ac24f31c4d4b3d5555065fa9558bdca4ab4b5e1379922875ae9e6e32f1d46d25"
+     ],
+     1231
+    ],
+    [
+     [
+      "7f5731ac8e6959576e781064b5fa76e059200cdfc3f4e0d7b68bc98792d2cf5b"
+     ],
+     1158
+    ],
+    [
+     [
+      "a3fa0d15dd83b910295d0b17f9d341e737eddcb8d9b8081758140584c710406e"
+     ],
+     1074
+    ]
+   ]
+  },
+  "primary_plus_id": {
+   "n_groups": 19009,
+   "rows_with_null_key": 0,
+   "size_distribution": {
+    "min": 1,
+    "median": 1.0,
+    "max": 1
+   },
+   "top5_by_n_rows": [
+    [
+     [
+      "058bd86861262fa71733f8515c34b729d9ebcad3d318e2a133a6c572dd80ba0b",
+      "00cb679a6af4c4551755ae374d496227b8f1fd1d39aec772ef21f4ba0a8f2275"
+     ],
+     1
+    ],
+    [
+     [
+      "058bd86861262fa71733f8515c34b729d9ebcad3d318e2a133a6c572dd80ba0b",
+      "01244b0adf3dbc10065344e8ee3a0edeac919c4fe74916fa3b78e72d38ffe02e"
+     ],
+     1
+    ],
+    [
+     [
+      "058bd86861262fa71733f8515c34b729d9ebcad3d318e2a133a6c572dd80ba0b",
+      "042c4760c4cc3463680d2c4cc0a27f39a2c0db5133c046bf0d946fc44d6bfedd"
+     ],
+     1
+    ],
+    [
+     [
+      "058bd86861262fa71733f8515c34b729d9ebcad3d318e2a133a6c572dd80ba0b",
+      "04d0c70faaf7cf12d1a1dcabef60fa6128ebd5269e635ad8571e8fec6a05b9c3"
+     ],
+     1
+    ],
+    [
+     [
+      "058bd86861262fa71733f8515c34b729d9ebcad3d318e2a133a6c572dd80ba0b",
+      "0675632827f17d885828bb576c511d7b619cd21ba7e8b800606ce3e02557ebc7"
+     ],
+     1
+    ]
+   ],
+   "note": "per-column aggregates skipped (one row per group)",
+   "keys": [
+    "Facebook_Id",
+    "post_id"
+   ]
+  },
+  "time": {
+   "n_groups": 425,
+   "rows_with_null_key": 0,
+   "size_distribution": {
+    "min": 1,
+    "median": 45.0,
+    "max": 103
+   },
+   "keys": [
+    "Post Created Date"
+   ],
+   "top5_by_n_rows": [
+    [
+     [
+      "2024-10-31"
+     ],
+     103
+    ],
+    [
+     [
+      "2024-01-10"
+     ],
+     102
+    ],
+    [
+     [
+      "2024-01-15"
+     ],
+     96
+    ],
+    [
+     [
+      "2024-01-06"
+     ],
+     95
+    ],
+    [
+     [
+      "2024-10-30"
+     ],
+     94
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,14 @@
+
+2024_fb_ads_president_scored_anon: comparing pure_python, pandas, polars
+  pure_python vs pandas: IDENTICAL (41 columns, 3 grouping(s), tol=1e-09)
+  pure_python vs polars: IDENTICAL (41 columns, 3 grouping(s), tol=1e-09)
+
+2024_fb_posts_president_scored_anon: comparing pure_python, pandas, polars
+  pure_python vs pandas: IDENTICAL (56 columns, 3 grouping(s), tol=1e-09)
+  pure_python vs polars: IDENTICAL (56 columns, 3 grouping(s), tol=1e-09)
+
+2024_tw_posts_president_scored_anon: comparing pure_python, pandas, polars
+  pure_python vs pandas: IDENTICAL (47 columns, 3 grouping(s), tol=1e-09)
+  pure_python vs polars: IDENTICAL (47 columns, 3 grouping(s), tol=1e-09)
+
+RESULT: all approaches agree
