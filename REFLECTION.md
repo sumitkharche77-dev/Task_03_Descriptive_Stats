@@ -86,3 +86,14 @@ the verification script; it was not able to see the real data until the scripts 
 heuristic failures above (thousands separators, wrong grouping key) were caught by reading the real outputs,
 not by the first draft. The AI's suggestions about tie-breaking and null handling also needed checking: the
 engines only agreed after the rules were written down explicitly and verified by `verify_agreement.py`.
+
+**Do AI tools produce dataset-specific code or code that generalizes?** In this project the AI was asked for a
+dataset-agnostic design from the start, and it produced one: rules computed from the data instead of lists of
+column names. I did not test what it would write if simply asked for "descriptive statistics for this file",
+so I cannot say what its default is for Task 3; Milestone A (where the code was written for the one ads
+file) suggests that without that instruction the output tends to name the file's columns. What I did observe is
+that "generalized" code can still be wrong in a dataset-specific way. Both of its heuristics that failed
+(thousands separators in `Total Interactions`; choosing a mostly-empty column as the grouping key) looked
+reasonable in the code and only broke on a file with those particular properties. My conclusion is that AI tools
+can produce the structure of a generalized solution quickly, but the thresholds and edge cases have to be
+found by running it on every real dataset and reading the output.
